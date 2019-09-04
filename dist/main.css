@@ -1,0 +1,225 @@
+:root, button {
+    --padding: 15px;
+    --border-radius: 5px;
+    --light-theme: rgb(98, 98, 233);
+    --shadow: rgba(255,255,255,0.2);
+    font-family: 'Manjari', sans-serif;
+    font-size: 18px;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/*.interactive-text-box {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    display: inline-block;
+}*/
+.main-text-box, button {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: black;
+    border: none;
+    position: relative;
+}
+
+.shadowed-element-container {
+    position: relative;
+}
+.shadowed-element-shadow {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -100;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 100px var(--shadow);
+}
+
+.main-text-box-container {
+    position: absolute;
+    top: calc(50% - 2em);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-text-box-container > * {
+    margin: 5px 0px;
+}
+
+.main-text-box {
+    min-height: 4em;
+    color: white;
+    vertical-align: middle;
+    --shadow: rgba(255,255,255,0.2);
+    z-index: 100;
+}
+
+@media screen and (max-width: 400px) {
+    .main-text-box-container {
+        left: var(--padding);
+        top: var(--padding);
+        right: var(--padding);
+        transform: none;
+        width: auto;
+    }
+}
+
+.main-text-box > div {
+    position: absolute;
+    top: 50%;
+    left: var(--padding);
+    right: var(--padding);
+    transform: translate(0%, -50%);
+}
+
+button {
+    background-color: black;
+    color: var(--light-theme);
+    border-radius: var(--border-radius);
+    --shadow: var(--light-theme);
+    width: 100%;
+}
+
+.choice {
+    --shadow: var(--light-theme);
+    animation: swoop-in 1s cubic-bezier(0.75, 0.03, 0.53, 1.32);
+}
+
+@keyframes swoop-in {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes swoop-in-before {
+    0%, 90% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.continue-arrow {
+    animation: bounce-right 0.3s ease infinite;
+    width: 16px;
+    position: absolute;
+    bottom: var(--padding);
+    right: var(--padding);
+}
+
+@keyframes bounce-right {
+    0%, 100% {
+        transform: translateX(-20%);
+    }
+    50% {
+        transform: translateX(20%);
+    }
+}
+
+.formatted-text-character.non-space-character {
+    display: inline;
+}
+
+.formatted-text {
+    display: block;
+    margin-bottom: -4px;
+}
+
+.wow {
+    animation: wow 0.3s ease infinite;
+}
+
+@keyframes wow {
+    0%, 100% {
+        transform: rotate(-10deg) translateY(-10%);
+    }
+    50% {
+        transform: rotate(10deg) translateY(10%);
+    }
+}
+
+.moonlight {
+    color: var(--light-theme);
+}
+
+.shake:not(.invisible).non-space-character {
+    display: inline-block;
+    animation: shake 0.5s ease infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+}
+
+.warmth:not(.invisible).non-space-character {
+    animation: warmth 0.3s ease infinite;
+}
+
+@keyframes warmth {
+    0%, 100% {
+        color: rgb(255, 123, 0);
+        text-shadow: 0px 0px 2px rgb(255, 102, 0);
+    }
+    50% {
+        color: rgb(255, 102, 0);
+        text-shadow: 0px 0px 0px rgb(255, 123, 0);
+    }
+}
+
+.midnight:not(.invisible) {
+    animation: midnight-glow 3s ease-in-out infinite;
+    color: rgb(57, 57, 167);
+}
+
+@keyframes midnight-glow {
+    0%, 100% {
+        text-shadow: 
+             0px -1px 1px midnightblue,
+            -1px  0px 1px midnightblue,
+             0px  1px 1px midnightblue,
+             1px  0px 1px midnightblue,
+            -1px -1px 1px midnightblue,
+            -1px  1px 1px midnightblue,
+             1px  1px 1px midnightblue,
+             1px -1px 1px midnightblue;
+    }
+    50% {
+        text-shadow: 
+             0px -1px 3px rgb(29, 29, 117),
+            -1px  0px 3px rgb(29, 29, 117),
+             0px  1px 3px rgb(29, 29, 117),
+             1px  0px 3px rgb(29, 29, 117),
+            -1px -1px 3px rgb(29, 29, 117),
+            -1px  1px 3px rgb(29, 29, 117), 
+             1px  1px 3px rgb(29, 29, 117),
+             1px -1px 3px rgb(29, 29, 117);
+    }
+}

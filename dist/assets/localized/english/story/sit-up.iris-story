@@ -1,0 +1,15 @@
+I sit up in my bed. The room is dark, only illuminated by the warm <moonlight>moonlight</moonlight> drifting in from the window.#
+I don't remember it being this late earlier...#
+I must have let time fly.
+$$branchChoices({
+    "choices": [
+        {
+            "text":"Leave bed.",
+            "destination": "standing"
+        },
+        {
+            "text":"Lay back down.",
+            "destination":"lay-back-down"
+        }
+    ]
+});#

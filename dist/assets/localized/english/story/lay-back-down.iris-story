@@ -1,0 +1,4 @@
+I fall back onto the bed.#
+$$jump({
+    "destination": "stare"
+});
