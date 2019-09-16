@@ -16,7 +16,7 @@ const layer = new Layer();
 export const story: {[index: string]: FormattedText} = {
     
 };
-const segments = ["beginning", "lay-back-down", "sit-up", "stare", "window-transition", "window"];
+const segments = ["beginning", "lay-back-down", "sit-up", "stare", "window-transition", "window", "standing", "desk"];
 
 const promises = segments.map((segment) => 
     app.localizer.loadAsset(`story/${segment}.iris-story`).then((text) => story[segment] = FormattedText.parse(text))

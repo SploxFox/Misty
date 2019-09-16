@@ -65,7 +65,7 @@ body {
 }
 
 .main-text-box {
-    min-height: 4em;
+    min-height: 5em;
     color: white;
     vertical-align: middle;
     --shadow: rgba(255,255,255,0.2);
@@ -96,29 +96,61 @@ button {
     border-radius: var(--border-radius);
     --shadow: var(--light-theme);
     width: 100%;
+    transition: transform 0.05s ease-in-out;
+    cursor: pointer;
+}
+
+button:focus, button:hover {
+    outline: none;
+    transform: scale(1.05);
 }
 
 .choice {
     --shadow: var(--light-theme);
-    animation: swoop-in 1s cubic-bezier(0.75, 0.03, 0.53, 1.32);
+}
+
+.choice.done > *:first-child > *:first-child::before {
+    content: " ";
+    position: absolute;
+    top: var(--padding);
+    left: var(--padding);
+    bottom: var(--padding);
+    background-image: url(assets/universal/icons/checkmark.svg);
+    width: 16px;
+    z-index: 1000;
+    background-size: 100% 100%;
+}
+
+.choice > * {
+    animation: bubble-in 1s ease-in-out; /*cubic-bezier(0.75, 0.03, 0.53, 1.32);*/
 }
 
 @keyframes swoop-in {
     0% {
         transform: translateY(-200%);
-        opacity: 0;
+        opacity: 1;
     }
     100% {
         transform: translateY(0%);
         opacity: 1;
     }
 }
+
 @keyframes swoop-in-before {
     0%, 90% {
-        opacity: 0
+        opacity: 1
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes bubble-in {
+    0% {
+        transform: scale(0) rotate(-9deg)
+    }
+    100% {
+        transform: scale(1) rotate(0deg)
     }
 }
 

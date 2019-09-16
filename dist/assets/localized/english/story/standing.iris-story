@@ -1,0 +1,14 @@
+I'm standing in my room right now.#
+Where should I go?
+$$branchChoices({
+    "choices": [
+        {
+            "destination":"desk",
+            "text":"My desk."
+        },
+        {
+            "destination":"lay-back-down",
+            "text":"My bed."
+        }
+    ]
+});#

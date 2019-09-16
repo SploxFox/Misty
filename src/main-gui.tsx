@@ -15,7 +15,9 @@ interface MainGUIState {
     choicesOut: {
         text: string,
         destination: string
-    }[]
+    }[],
+    hasStared: boolean;
+    hasDesked: boolean;
 }
 
 export class MainGUI extends React.Component<MainGUIProps, MainGUIState> {
@@ -24,9 +26,12 @@ export class MainGUI extends React.Component<MainGUIProps, MainGUIState> {
         super(props);
 
         this.state = {
-            choicesOut: []
+            choicesOut: [],
+            hasDesked: false,
+            hasStared: false
         }
     }
+
     render() {
         console.log(this);
         return(<div>
@@ -40,6 +45,14 @@ export class MainGUI extends React.Component<MainGUIProps, MainGUIState> {
                             branchChoices: (args: {choices: {text: string, destination: string}[]}) => {
                                 this.setState({choicesOut: args.choices});
                                 this.mainTextBox.setState({locked: true});
+                            },
+                            doneStare: () => {
+                                this.setState({hasStared: true});
+                                this.attemptToJumpToWindow();
+                            },
+                            doneDesk: () => {
+                                this.setState({hasDesked: true});
+                                this.attemptToJumpToWindow();
                             }
                         }
                     }}
@@ -47,7 +60,7 @@ export class MainGUI extends React.Component<MainGUIProps, MainGUIState> {
                 </ShadowedElement>
                 
                 {this.state.choicesOut.map((choice, index) =>
-                    <ShadowedElement key={index} className="choice">
+                    <ShadowedElement key={index} className={`choice ${(this.state.hasStared && (choice.destination == "lay-back-down" || choice.destination == "stare")) || (this.state.hasDesked && choice.destination == "desk") ? "done" : ""}`}>
                         <FormattedButton formattedText={FormattedText.parse(choice.text)}  selectedCallback={() => this.selectChoiceBranch(choice.destination)}></FormattedButton>
                     </ShadowedElement>
                 )}
@@ -70,6 +83,11 @@ export class MainGUI extends React.Component<MainGUIProps, MainGUIState> {
     attemptToAdvance(mainTextBox: MainTextBox) {
         if (mainTextBox.state.stopped && !mainTextBox.state.locked) {
             mainTextBox.textBox.start();
+        }
+    }
+    attemptToJumpToWindow() {
+        if (this.state.hasDesked && this.state.hasStared) {
+            this.mainTextBox.jump("window");
         }
     }
 }

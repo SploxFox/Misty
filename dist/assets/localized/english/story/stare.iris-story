@@ -5,21 +5,25 @@ It was two people: Noelle and Michael.#
 //Noelle was always talking, always gossiping... she was pretty popular, more popular than me anyways.#;
 On that day... Noelle was sitting next to me in last period.#
 She was spending her time using her school iPad for iMessage, of course...#
-What was it that she wanted to be...?#
+There was something she wanted to do...#
+Something to do with her life.#
 A lawyer, was it?#
 That reality...#
 That reality where Noelle's a lawyer...#
 I stole it from her.#
+I stole it when I stole her life away.#
 And Michael... Michael was so nice.#
 He had last free, so he had already left the building...#
-But he stayed behind.#
+But he hadn't gone home just yet. I could still see him from the window.#
 He stayed behind because of Jax.#
 Jax isn't dead, thankfully.#
-Jax's feet were at the edge of the school's outdoor pool...#
+Outside, they were by the pool.#
+Jax's feet were anxiously curling around the edge of it...#
 ...the words of a couple upperclassmen standing to the side prickling him in the back, pushing him to jump in.#
 I could see it all unfold from the window.#
 The faint sound of a splash graced my ears as I was attempting to focus on my schoolwork...#
-It was Michael in the pool, still in his school clothes, now inviting Jax to join him.#
+It was Michael in the pool, still in his school clothes.#
+Then, with the kind of confidence deep in his chest that was typical for Michael, he invited Jax to join him.#
 Jax did.#
 And--from what I could see--it looked like Jax was having <warmth>fun</warmth>, being <warmth>happy</warmth>.#
 How could Michael do that?#
@@ -30,29 +34,37 @@ Oh, he definitely was able to work some kind of magic when talking to people.#
 I wish I could make people happy.#
 Instead, I'm just a thief.#
 A thief who steals lives.# 
-I did it to them--I <emphasis>stole their lives away.</emphasis>#
+I did it to them--I <emphasis>stole their lives away</emphasis>!#
 It's <shake>all my fault!</shake>#
 <shake>All my fault that they're dead!</shake>#
 How? <shake>How?</shake> How could this have happened to the people that I cared about most...?#
 Ugh!# 
 <shake>I wish--I wish that I was the one who died! I wish I were dead!</shake>#
-...#
+Why was I the only survivor when the accident was my fault anyways?#
+It's not fair!#
+I shoult probably...#
+probably just...#
+Ugh!#
+What am I good for anyways?#
+I never help people!#
+I never make people happy!#
+<shake>There's no reason for me to be alive right now!</shake>#
 My train of thought...#
 I don't like where it's going.#
 I should stop thinking about this.#
 ...#
-I guess I'll start by taking my mind off of this by studying the ceiling.#
-Hmmm...#
+//I guess I'll start by taking my mind off of this by studying the ceiling.#;
 I never noticed how shiny the base of my ceiling fan is.#
+I've been staring at it this whole time, but I've been so zoned out I haven't really been looking at it.#
 I can see... so much.#
 Perhaps more than I'd like.#
 ...#
 There's this Thing... on a bed, staring back at me in the reflection.#
 What is it?#
 Is that suppose to be me?#
-...
-They blink whenever I blink...#
-...and raise their hand whenever I do.#
+...#
+She blinks whenever I blink...#
+...and raises her hand whenever I do.#
 But that Thing...#
 <slant>I don't know what it is...</slant>#
 It's looking back at me with horrid fascination...#
@@ -62,3 +74,4 @@ I'm getting up.#
 $$jump({
     "destination": "standing"
 });
+$$doneStare({});
